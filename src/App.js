@@ -4,6 +4,11 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+
 import './App.css';
 
 class App extends React.Component {
@@ -33,7 +38,7 @@ constructor(props){
   render(){
     return (
       <Router>
-        <Container className="p-0" fluid={false}>
+        <Container className="p-0" fluid={true}>
           <Navbar className="border-bottom" bg="transparent" expand="lg">
             {/* expand="lg" allows the toggle button to be displayed */}
             <Navbar.Brand>Fanny LEFERT</Navbar.Brand>
@@ -47,6 +52,17 @@ constructor(props){
               </Nav>
             </Navbar.Collapse>
           </Navbar>
+          {/* React router uses link instead of button or anchor, route says"whenever you are at this path, render this page" */}
+          {/* exact is looking for the exact path/property/match and not only / */}
+          {/* the url and the content change when clicking on button  because we render a different component */}
+          {/* we are using the state from the main app page to pass that data in the props into our pages , pages will not be class-based components, they will be functoonal components and simply display date.*/}
+          {/* while we maintain the bulk of the states in the main component for our application */}
+          <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} text={this.state.home.text}/>} />
+          <Route path="/about" exact render={() => <AboutPage title={this.state.about.title} />} />
+          <Route path="/contact" exact render={() => <ContactPage title={this.state.contact.title} />} />
+
+          <Footer />
+
         </Container>
       </Router>
     );
