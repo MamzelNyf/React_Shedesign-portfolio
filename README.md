@@ -1,5 +1,6 @@
+#SheDesign Portfolio
 This project was created to develop my portfolio while learning React Technology.
-Stack:
+##Stack:
 - React
 - React Router
 - React Spring
