@@ -27,7 +27,7 @@ constructor(props){
       text: 'Check out my projects below'
     },
     about: {
-      title: 'About',
+      title: 'About me',
     },
     contact: {
       title: 'Let\'s talk',

@@ -43,6 +43,7 @@ class Carousel extends React.Component{
     }
     // create a method with a spread operator
     handleCardClick = (id, card) => {
+        // console.log(id);return the id selected
         let items = [...this.state.items];
         // retrieve project selected with the ID and to toggle the project slected to non-selected
         items[id].selected = items[id].selected ? false : true;
@@ -61,7 +62,7 @@ class Carousel extends React.Component{
     makeItems = (items) => {
         return items.map(item => {
             //bind event and item.id, provide a key because we are mapping through a array and we create new elements for each item
-            return <Card item={item} onClick={(e => this.handleCardClick(item.id, e))} key={item.id} />
+            return <Card item={item} click={(e => this.handleCardClick(item.id, e))} key={item.id} />
         });
     }
     render() {
