@@ -4,18 +4,17 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
-import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 
-import './App.css';
-
+// import './App.css';
+import './sass/App.scss'
 class App extends React.Component {
 constructor(props){
   super(props);
   this.state = {
-    titel: 'Fanny Lefert',
+    title: 'Fanny Lefert',
     headerLinks: [
       {title: 'Home', path: '/' },
       {title: 'About', path: '/about' },
@@ -39,7 +38,7 @@ constructor(props){
     return (
       <Router>
         <Container className="p-0" fluid={true}>
-          <Navbar className="border-bottom" bg="transparent" expand="lg">
+        <Navbar className="border-bottom" bg="transparent" expand="lg">
             {/* expand="lg" allows the toggle button to be displayed */}
             <Navbar.Brand>Fanny LEFERT</Navbar.Brand>
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
@@ -60,11 +59,9 @@ constructor(props){
           <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} text={this.state.home.text}/>} />
           <Route path="/about" exact render={() => <AboutPage title={this.state.about.title} />} />
           <Route path="/contact" exact render={() => <ContactPage title={this.state.contact.title} />} />
-
-          <Footer />
-
-        </Container>
-      </Router>
+        </Container>    
+      </Router>    
+  
     );
   }
 }

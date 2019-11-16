@@ -1,13 +1,24 @@
-.App {
-  text-align: center;
+
+body{
+  overflow:hidden;
+  background-color: #00354c!important;
+}
+h1,h2,h3,h4,p{
+  color:white;
+
 }
 
+.colorize-blue {
+  filter: brightness(0.2) sepia(1) hue-rotate(180deg) saturate(5);}
+
+/* .App {
+  text-align: center;  
+}
 .App-logo {
   height: 40vmin;
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,4 +30,4 @@
 
 .App-link {
   color: #09d3ac;
-}
+} */

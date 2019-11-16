@@ -1,0 +1,13 @@
+
+body{
+    overflow:hidden;
+    background-color: #00354c!important;
+  }
+  h1,h2,h3,h4,p{
+    color:white;
+  
+  }
+  
+  .colorize-blue {
+    filter: brightness(0.2) sepia(1) hue-rotate(180deg) saturate(5);}
+  
