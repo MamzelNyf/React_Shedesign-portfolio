@@ -8,6 +8,8 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 
+import logo from './assets/images/logo-shedesigndev.svg';
+
 // import './App.css';
 import './sass/App.scss'
 class App extends React.Component {
@@ -26,7 +28,7 @@ constructor(props){
       text: 'Check out my projects below'
     },
     about: {
-      title: 'About me',
+      title: 'Being Creative makes me happy.',
     },
     contact: {
       title: 'Let\'s talk',
@@ -38,16 +40,18 @@ constructor(props){
     return (
       <Router>
         <Container className="p-0" fluid={true}>
-        <Navbar className="border-bottom" bg="transparent" expand="lg">
+        <Navbar bg="transparent" expand="lg">
             {/* expand="lg" allows the toggle button to be displayed */}
-            <Navbar.Brand>Fanny LEFERT</Navbar.Brand>
+            <Navbar.Brand>
+            <Link className="nav-link" to="/"><img src={logo} alt="SheDesign.dev Logo"/></Link>
+            </Navbar.Brand>
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
             {/* Toggle and Collapse allow the responsive menu - aria-controls allows accessibility - need to be same as ID in collapse*/}
             <Navbar.Collapse id="navbar-toggle">
               <Nav className='ml-auto'>
-                 <Link className="nav-link" to="/">Home</Link>{/*to= create the url */}
-                <Link className="nav-link" to="/about">About</Link>
-                <Link className="nav-link" to="/contact">Contact</Link>
+                <div className='hover-lined'> <Link className="nav-link hover" to="/">Home</Link>{/*to= create the url */}</div>
+                <div className='hover-lined'><Link className="nav-link hover" to="/about">About</Link></div>
+                <div className='hover-lined'><Link className="nav-link hover" to="/contact">Contact</Link></div>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -58,10 +62,12 @@ constructor(props){
           {/* while we maintain the bulk of the states in the main component for our application */}
           <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} text={this.state.home.text}/>} />
           <Route path="/about" exact render={() => <AboutPage title={this.state.about.title} />} />
-          <Route path="/contact" exact render={() => <ContactPage title={this.state.contact.title} />} />
+          <Route path="/contact" exact render={() => <ContactPage title={this.state.contact.title} />} />      
+          {/* <Footer /> */}
+
         </Container>    
       </Router>    
-  
+
     );
   }
 }
