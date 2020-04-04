@@ -1,7 +1,6 @@
-
+//Global Css
 body{
-    overflow:hidden;
-    background-color: #00354c!important;
+    background-color: $primary!important;
     height:100%;
     font-family: 'Caviar', sans-serif!important;
 }
@@ -17,10 +16,13 @@ nav a{
     }
 }
 
-//Add a filter to colorise the bubble in blue on light background
-// .colorize-blue {
-//     filter: brightness(0.2) sepia(1) hue-rotate(180deg) saturate(5);
-// }
+.bubble-bck{
+    background-image:url('../assets/images/stars.svg');
+    height: 2500px;
+}
+
+
+///////Hover Animation for hover menu
 $animate: all 0.2s ease-in-out;
 .hover-lined {
     display: flex;
@@ -68,8 +70,7 @@ $animate: all 0.2s ease-in-out;
     }
 }
 
-//ball
-
+/////// Bouncing bubble
 
 .ball {
 display: inline-block;

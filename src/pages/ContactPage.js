@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 
 import Hero from '../components/Hero';
 import Content from '../components/Content';
-import Footer from '../components/Footer';
 import Axios from 'axios';
 
 
@@ -99,7 +98,6 @@ class ContactPage extends React.Component{
                         {this.state.emailSent === false && <p className="d-inline error-msg">Email Not Sent</p>}
                     </Form>
                 </Content>
-                <Footer />
             </div>
 
         );
